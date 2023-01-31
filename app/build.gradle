@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.alangaelrojas.mymovies'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.alangaelrojas.mymovies"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    /**
+     * Se ajustan las opciones para kotlin, por ejemplo la version de java a la cual apuntara
+     * el jvm (Java Virtual Machine)
+     * **/
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    /**
+     * Aqui se ajustan las caracteristicas que puede tener nuestro proyecto, tales como
+     * data binding y view binding, compose entre otros
+     * @see https://developer.android.com/reference/tools/gradle-api/7.0/com/android/build/api/dsl/BuildFeatures
+     * *  */
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+
+/**
+ * Listado de dependencias o librerias que seran descargados e importados al proyecto
+ * para despues puedan ser utilizados en nuestro codigo
+ * **/
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // Recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

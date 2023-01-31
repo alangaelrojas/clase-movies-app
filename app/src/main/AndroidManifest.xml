@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+    En el AndroidManifest o manifiesto es el lugar donde se van a declarar los valores especiales de nuestra aplicacion
+    y que funciona como "Contrato o Manifiesto", o sea que Android SO lee este archivo antes de instalar una aplicacion en el telefono
+    y verifica los componentes declarados en nuestra app, como lo son: Permisos, detalles de la app, activities, servicios, receivers, etc.
+    ref https://developer.android.com/guide/topics/manifest/manifest-intro?hl=es-419
+    -->
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyMovies"
+        tools:targetApi="31">
+        <activity
+            android:name=".DetailMovieActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        </activity>
+        <activity
+            android:name=".MoviesActivity"
+            android:exported="false">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

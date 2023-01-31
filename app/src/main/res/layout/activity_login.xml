@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--TODO Agregar el diseño para el login basado en
+    el diseño de https://xd.adobe.com/view/6cfe2779-6bb9-407c-aeae-49ee390dc7cd-39ad/
+    -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Este es el login"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
